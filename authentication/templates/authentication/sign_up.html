@@ -1,0 +1,18 @@
+{% extends "authentication/base.html" %}
+
+{% block content %}
+<div id="signup" class="auth">
+	<form action="{% url 'authentication:sign_up' %}" method="POST" class="form-signin">
+		{% csrf_token %}
+		<h1 class="h3 mb-3 font-weight-normal"><a href="{% url 'authentication:login' %}"> Log in </a>| Sign Up</h1>
+		<input type="text" name="user" class="form-control" placeholder="Username" required autofocus>
+		<input type="email" name="email" class="form-control" placeholder="Email" required autofocus>
+		<input type="password" name="password" class="form-control" placeholder="Password" required>
+		<input type="password" name="confirm_password" class="form-control" placeholder="Repete Password" required>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+		{% if error %}
+		<h6 class="error">{{ error }}</h6>
+		{% endif %}
+	</form>
+</div>
+{% endblock %}

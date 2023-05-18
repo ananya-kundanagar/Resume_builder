@@ -1,0 +1,442 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,900|Montserrat|Roboto");
+html[data-theme='green'] {
+  --darker-color-theme: #3FB6A8;
+  --ligther-color-theme: #7ED386;
+}
+
+html[data-theme='pink'] {
+  --darker-color-theme: #fa567d;
+  --ligther-color-theme: #fec48b;
+}
+
+html[data-theme='blue'] {
+  --darker-color-theme: #1e46e4;
+  --ligther-color-theme: #00a2ff;
+}
+
+html[data-theme='orange'] {
+  --darker-color-theme: #dc6542;
+  --ligther-color-theme: #ffc300;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, var(--darker-color-theme), var(--ligther-color-theme));
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.container {
+  background: white;
+  width: 100vw;
+  max-width: 540px;
+  height: 56vh;
+  min-height: 420px;
+  margin-top: 10%;
+  box-shadow: 2px 5px 20px rgba(119, 119, 119, 0.5);
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.container .logo {
+  float: right;
+  margin-right: 12px;
+  margin-top: 12px;
+  font-family: "Nunito Sans", sans-serif;
+  color: var(--ligther-color-theme);
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.container .CTA {
+  width: 100px;
+  height: 60px;
+  right: -26px;
+  bottom: 90px;
+  position: absolute;
+  z-index: 1;
+  background: var(--ligther-color-theme);
+  cursor: pointer;
+  text-align: center;
+  padding-top: 13px;
+  box-shadow: 3px 3px 10px rgba(119, 119, 119, 0.5);
+}
+
+.container .CTA:hover {
+  background: var(--darker-color-theme);
+  transform: scale(1.1);
+}
+
+.container .CTA h3 {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  margin: 0;
+}
+
+.container .menubar {
+  float: left;
+  top: -5%;
+  left: 5%;
+  position: absolute;
+  width: 15%;
+  height: 110%;
+  background: var(--ligther-color-theme);
+  box-shadow: 3px 3px 10px rgba(119, 119, 119, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.container .menubar a {
+  color: white;
+  font-size: 1.1rem;
+}
+
+.container .menubar a:hover {
+  color: var(--darker-color-theme);
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.container .menubar a.active {
+  color: var(--darker-color-theme);
+}
+
+.container .content {
+  height: 100%;
+}
+
+.container .content .profile, .container .content .experience, .container .content .education, .container .content .skills, .container .content .settings, .container .content .auth {
+  position: relative;
+  left: 24%;
+  width: 60%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.container .content .profile h1, .container .content .experience h1, .container .content .education h1, .container .content .skills h1, .container .content .settings h1, .container .content .auth h1 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--ligther-color-theme);
+  font-size: 1em;
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+
+.container .content .profile h2, .container .content .experience h2, .container .content .education h2, .container .content .skills h2, .container .content .settings h2, .container .content .auth h2 {
+  color: #777777;
+  font-family: "Roboto", sans-serif;
+  width: 80%;
+  text-transform: uppercase;
+  font-size: 8px;
+  letter-spacing: 1px;
+  margin-left: 2px;
+}
+
+.container .content .profile p, .container .content .experience p, .container .content .education p, .container .content .skills p, .container .content .settings p, .container .content .auth p {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to right, var(--darker-color-theme), var(--ligther-color-theme)) 1 0%;
+  border-top: 0;
+  width: 95%;
+  font-family: "Montserrat", sans-serif;
+  font-size: .7em;
+  padding: 7px 0;
+  color: #070707;
+}
+
+.container .content .profile p.two-in-one, .container .content .experience p.two-in-one, .container .content .education p.two-in-one, .container .content .skills p.two-in-one, .container .content .settings p.two-in-one, .container .content .auth p.two-in-one {
+  display: inline-flex;
+}
+
+.container .content .profile input, .container .content .profile textarea, .container .content .experience input, .container .content .experience textarea, .container .content .education input, .container .content .education textarea, .container .content .skills input, .container .content .skills textarea, .container .content .settings input, .container .content .settings textarea, .container .content .auth input, .container .content .auth textarea {
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
+  outline: none;
+  resize: none;
+}
+
+.container .content .profile span, .container .content .experience span, .container .content .education span, .container .content .skills span, .container .content .settings span, .container .content .auth span {
+  font-size: .5em;
+  color: #777777;
+}
+
+.container .content .profile .btn, .container .content .experience .btn, .container .content .education .btn, .container .content .skills .btn, .container .content .settings .btn, .container .content .auth .btn {
+  float: right;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 10px;
+  border: none;
+  color: var(--darker-color-theme);
+  padding-right: 20px;
+  outline: none;
+}
+
+.container .content .profile .btn:hover, .container .content .experience .btn:hover, .container .content .education .btn:hover, .container .content .skills .btn:hover, .container .content .settings .btn:hover, .container .content .auth .btn:hover {
+  text-decoration: underline;
+  font-weight: 900;
+}
+
+.container .content .experience p, .container .content .education p {
+  width: 80%;
+}
+
+.container .content .experience .slideshow, .container .content .education .slideshow {
+  max-height: 310px;
+  width: 378px;
+  overflow: hidden;
+}
+
+.container .content .experience .slide-wrapper, .container .content .education .slide-wrapper {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.container .content .experience .slide, .container .content .education .slide {
+  float: left;
+  max-height: 310px;
+  width: 378px;
+  transition-property: margin;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-out;
+}
+
+.container .content .experience .slide .btn, .container .content .education .slide .btn {
+  padding-right: 75px;
+}
+
+.container .content .experience .slide .delete, .container .content .education .slide .delete {
+  padding-right: 5px;
+  color: orangered;
+  font-size: 0.9rem;
+}
+
+.container .content .experience .pagination-btns, .container .content .education .pagination-btns {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.container .content .experience .pagination-btns .btn, .container .content .education .pagination-btns .btn {
+  float: left;
+  margin-right: 12px;
+  padding: 0;
+  width: auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--ligther-color-theme);
+  cursor: pointer;
+}
+
+.container .content .experience .pagination-btns .active, .container .content .education .pagination-btns .active {
+  background-color: var(--darker-color-theme);
+}
+
+.container .content .skills a {
+  text-decoration: none;
+  color: white;
+}
+
+.container .content .skills .btn {
+  float: none;
+}
+
+.container .content .skills .skill-wrapper {
+  overflow: hidden;
+}
+
+.container .content .skills .skill-container {
+  display: list-item;
+  max-height: 300px;
+  overflow: auto;
+  margin-top: -55px;
+}
+
+.container .content .skills .skill-container .skill {
+  border: 2px var(--darker-color-theme) solid;
+  padding: 15px;
+  margin: 7px;
+  cursor: pointer;
+}
+
+.container .content .skills .skill-container .skill .delete {
+  display: none;
+}
+
+.container .content .skills .skill-container .skill.new:hover {
+  background-color: white;
+  border: 2px var(--darker-color-theme) solid;
+  color: #333;
+}
+
+.container .content .skills .skill-container .skill:hover {
+  background-color: tomato;
+  border: 2px tomato solid;
+  color: white;
+}
+
+.container .content .skills .skill-container .skill:hover .name {
+  opacity: 0;
+  display: none;
+}
+
+.container .content .skills .skill-container .skill:hover .delete {
+  display: block;
+}
+
+.container .content .settings ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.container .content .settings ul li {
+  margin-bottom: 10px;
+  border: 2px solid var(--darker-color-theme);
+  padding: 10px;
+  width: fit-content;
+}
+
+.container .content .settings ul li:hover {
+  background-color: var(--darker-color-theme);
+}
+
+.container .content .settings ul li:hover a {
+  color: white;
+}
+
+.container .content .settings ul li a {
+  text-decoration: none;
+  padding: 0 !important;
+}
+
+.container .content .settings ul li a:hover {
+  text-decoration: none;
+}
+
+.container .content .settings div.themes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50%;
+  margin-top: 20px;
+}
+
+.container .content .settings a.theme {
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  opacity: 0.4;
+}
+
+.container .content .settings a.theme:hover {
+  opacity: 1;
+}
+
+.container .content .settings a.theme.active {
+  opacity: 1;
+}
+
+.container .content .settings a.theme.green {
+  background: linear-gradient(to right, #3FB6A8, #7ED386);
+}
+
+.container .content .settings a.theme.pink {
+  background: linear-gradient(to right, #ff6faf, #fec48b);
+}
+
+.container .content .settings a.theme.blue {
+  background: linear-gradient(to right, #1127e9, #00a2ff);
+}
+
+.container .content .settings a.theme.orange {
+  background: linear-gradient(to right, #dc6542, #ffc300);
+}
+
+.container .content .auth {
+  height: 100%;
+  width: 100%;
+  left: 0%;
+}
+
+.container .content .auth form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .content .auth button {
+  padding: 0;
+}
+
+.container .content .auth button:hover {
+  color: #FFFFFF;
+  background-color: var(--darker-color-theme);
+}
+
+.container .content .auth input, .container .content .auth button {
+  margin: 10px;
+  width: 160px;
+  height: 30px;
+  padding-left: 10px;
+  font-family: inherit;
+  font-size: inherit;
+  font-family: "Roboto", sans-serif;
+  border: 1px var(--darker-color-theme) solid;
+  color: var(--darker-color-theme);
+  outline: none;
+  transition: ease;
+  transition-duration: 0.6s;
+  transition-property: background-color, color;
+}
+
+.container .content .auth h1 {
+  font-size: 1.5rem;
+  margin: 10px;
+}
+
+.container .content .auth h1, .container .content .auth a {
+  font-family: "Montserrat", sans-serif;
+  color: var(--ligther-color-theme);
+  text-decoration: none;
+  transition: ease;
+  transition-duration: 0.3s;
+  transition-property: color;
+}
+
+.container .content .auth a:hover {
+  text-decoration: underline;
+  color: var(--darker-color-theme);
+}
+
+.container .content .auth h6 {
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  color: tomato;
+  margin: 10px;
+}

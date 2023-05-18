@@ -1,0 +1,35 @@
+{% extends "resume/base.html" %}
+
+{% block content %}
+{% load static %}
+
+	<div class="profile">
+		<h1>Personal Info</h1>
+		<form action="{% url 'resume:update_user' %}" method="POST">
+			{% csrf_token %}
+			<button class="btn">Save</button>
+			<h2>Full Name</h2>
+			<p class='two-in-one'>
+				<input type="text" name="first_name" value="{{first_name}}">
+				<input type="text" name="last_name" value="{{last_name}}">
+			</p>
+			<h2>Profession</h2>
+			<p>
+				<input type="text" name="profession" value="{{profession}}">
+			</p>
+			<h2>Email</h2>
+			<p>
+				<input type="text" name="email" value="{{email}}">
+			</p>
+			<h2>Phone</h2>
+			<p>
+				<input type="text" name="phone" value="{{phone}}">
+			</p>
+			<h2>Bio</h2>
+			<p>
+				<textarea name="bio" cols="50" rows="4" maxlength="300">{{bio}}</textarea>
+			</p>
+		</form>
+	</div>
+
+{% endblock %}

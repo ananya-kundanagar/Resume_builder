@@ -1,0 +1,16 @@
+{% extends "authentication/base.html" %}
+
+{% block content %}
+<div id="delete" class="auth">
+	<form action="{% url 'authentication:delete_account' %}" method="POST" class="form-signin">
+		{% csrf_token %}
+		<h1 class="h3 mb-3 font-weight-normal"> Confirm Account Deletetion </h1>
+		<input type="password" name="password" class="form-control" placeholder="Password" required>
+		<input type="text" name="confirm_deletion" class="form-control" placeholder="Type DELETE" required>
+		<button class="btn btn-lg btn-primary btn-block">Delete</button>
+		{% if error %}
+		<h6 class="error">{{ error }}</h6>
+		{% endif %}
+	</form>
+</div>
+{% endblock %}

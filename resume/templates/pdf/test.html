@@ -1,0 +1,61 @@
+<html data-theme="{{theme}}">
+    <head>
+        <title>test</title>
+        <link rel="stylesheet" href="test.css">
+    </head>
+    <style>
+        @page{
+            margin: -10px;
+        }
+    </style>
+    <body>
+        <div class='header'>
+            <p class='name'>{{full_name}}</p>
+            <p class='profession'>{{profession}}</p>
+  
+        </div>
+        <div class='resume-body'>
+            <div class="section">
+                <div class="section-name">About me</div>
+                <div class="section-content">
+                    <p class="description">
+                        {{about_me}}
+                    </p> 
+                    <div class="subtitle phone">Phone : +983396946</div>
+                    <div class="subtitle email">email : dhiraj@gmail.com</div>
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-name">Experience</div>
+                {% for experience in experiences  %}
+                <div class="section-content">
+                    <div class="title">{{experience.company}} - <span class="subtitle">{{experience.role}}</span> </div>
+                    <div class="dates">{{experience.startDate}} - {{experience.endDate}}</div>
+                    <div class="description">{{experience.description}}</div>
+                </div>
+                {% endfor  %}
+            </div>
+            <div class="section">
+                <div class="section-name">Education</div>
+                {% for education in educations  %}
+                <div class="section-content">
+                    <div class="title">{{education.school}} - <span class="subtitle">{{education.degree}}</span> </div>
+                    <div class="dates">{{education.startDate}} - {{education.endDate}}</div>
+                    <div class="description">{{education.description}}</div>
+                </div>
+                {% endfor  %}
+            </div>
+            <div class="section">
+                <div class="section-name">Skills</div>
+                <div class="section-content skill">
+                    {% for skill in skills  %}
+                    <li class="subtitle">{{skill.name}}</li>
+                    {% endfor  %}
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

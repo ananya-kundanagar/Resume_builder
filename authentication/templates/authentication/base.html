@@ -1,0 +1,28 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en" data-theme="green">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Resume-builder</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+	<link href="{% static 'resume/css/style.css' %}" rel="stylesheet">
+	<script src="../static/pagination.js"></script>
+</head>
+
+<body>
+	<main role="main">
+		<div class="container">
+			<div class="content">
+					{% block content %}
+					{% endblock %}	  
+			</div>
+		  </div>
+		  
+	</main>
+
+</body>
+
+</html>

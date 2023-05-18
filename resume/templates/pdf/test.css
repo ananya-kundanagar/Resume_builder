@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:100,400,900|Montserrat|Roboto");
+html[data-theme=green] {
+  --darker-color-theme: #3FB6A8;
+  --ligther-color-theme: #7ED386;
+}
+html[data-theme=green] .header {
+  background: linear-gradient(to right, #3FB6A8, #7ED386);
+}
+html[data-theme=green] .section {
+  border-bottom: 3px #7ED386 solid;
+}
+
+html[data-theme=pink] {
+  --darker-color-theme: #fa567d;
+  --ligther-color-theme: #fec48b;
+}
+html[data-theme=pink] .header {
+  background: linear-gradient(to right, #fa567d, #fec48b);
+}
+html[data-theme=pink] .section {
+  border-bottom: 3px #fec48b solid;
+}
+
+html[data-theme=blue] {
+  --darker-color-theme: #1e46e4;
+  --ligther-color-theme: #00a2ff;
+}
+html[data-theme=blue] .header {
+  background: linear-gradient(to right, #1e46e4, #00a2ff);
+}
+html[data-theme=blue] .section {
+  border-bottom: 3px #00a2ff solid;
+}
+
+html[data-theme=orange] {
+  --darker-color-theme: #dc6542;
+  --ligther-color-theme: #ffc300;
+}
+html[data-theme=orange] .header {
+  background: linear-gradient(to right, #dc6542, #ffc300);
+}
+html[data-theme=orange] .section {
+  border-bottom: 3px #ffc300 solid;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-weight: 200;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header {
+  font-size: 20px;
+  font-weight: 100;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  height: 95pt;
+}
+.header .name {
+  margin: 0;
+  padding-top: 35px;
+  font-size: 28px;
+}
+.header .profession {
+  margin: 5px;
+  font-size: 20px;
+}
+.header .contacts {
+  text-align: center;
+  font-weight: 100;
+  font-size: 16px;
+}
+.header .contacts div {
+  margin: auto auto auto 150px;
+  float: left;
+}
+
+.resume-body {
+  padding: 20pt;
+  width: 100%;
+  height: 747pt;
+}
+.resume-body .section {
+  width: 555pt;
+  margin-bottom: 10pt;
+  padding: 10pt;
+}
+.resume-body .section:last-child {
+  border-bottom: none;
+}
+.resume-body .section .section-name {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: var(--darker-color-theme);
+}
+.resume-body .section .section-content {
+  margin-bottom: 30px;
+  font-family: "Roboto", sans-serif;
+}
+.resume-body .section .section-content.skill {
+  margin-left: 20px;
+}
+.resume-body .section .section-content .phone, .resume-body .section .section-content .email {
+  float: left;
+  margin: 20px 30px 10px 0;
+}
+.resume-body .section .section-content .title {
+  font-size: 22px;
+  margin-bottom: 3px;
+}
+.resume-body .section .section-content .subtitle {
+  font-size: 20px;
+}
+.resume-body .section .section-content .dates {
+  float: right;
+  margin-top: -20px;
+  font-size: 14px;
+}
+.resume-body .section .section-content .description {
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=test.css.map */

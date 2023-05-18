@@ -1,0 +1,26 @@
+{% extends "resume/base.html" %}
+
+{% block content %}
+{% load static %}
+
+	<div class="skills">
+		<h1>Skills</h1>
+		<button class="btn" onClick="newSkill()">+ New Skill</button>
+		<div class="skill-wrapper">
+			<div class="skill-container">
+				<form action="{% url 'resume:create_skill' %}" method="POST">
+					{% csrf_token %}
+					<div class="skill new">
+						<input type="text" name="name">
+						<input type="submit" style="display: none;">
+					</div>
+				</form>
+					
+				{% for skill in skills %}
+				<div class="skill"><div class="name">{{skill.name}}</div><a href="skills/delete_skill/{{skill.id}}" class="delete"> DELETE </a></div>
+				{% endfor  %}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

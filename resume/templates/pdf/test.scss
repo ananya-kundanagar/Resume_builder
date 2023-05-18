@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:100,400,900|Montserrat|Roboto");
+
+
+html[data-theme='green']{
+	--darker-color-theme: #3FB6A8;
+	--ligther-color-theme: #7ED386;
+	.header{
+		background: linear-gradient(to right, #3FB6A8 , #7ED386);;
+	}
+	.section{
+		border-bottom: 3px #7ED386 solid;
+	}
+}
+html[data-theme='pink']{
+	--darker-color-theme: #fa567d;
+	--ligther-color-theme: #fec48b;
+	.header{
+		background: linear-gradient(to right, #fa567d , #fec48b);;
+	}
+	.section{
+		border-bottom: 3px #fec48b solid;
+	}
+}
+html[data-theme='blue']{
+	--darker-color-theme: #1e46e4;
+	--ligther-color-theme: #00a2ff;
+	.header{
+		background: linear-gradient(to right, #1e46e4 , #00a2ff);;
+	}
+	.section{
+		border-bottom: 3px #00a2ff solid;
+	}
+}
+html[data-theme='orange']{
+	--darker-color-theme: #dc6542;
+	--ligther-color-theme: #ffc300;
+	.header{
+		background: linear-gradient(to right, #dc6542 , #ffc300);;
+	}
+	.section{
+		border-bottom: 3px #ffc300 solid;
+	}
+}
+
+
+// A4 size: 595.4 × 842 points
+$header-height: 95pt;
+$body-height: 747pt;
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-weight: 200;
+	font-size: 14px;
+	font-family: "Montserrat", sans-serif;
+
+}
+
+.header {
+	font-size: 20px;
+	font-weight: 100;
+	text-align: center;
+	color: #fff;
+	width: 100%;
+	height: $header-height;
+	
+	.name {
+		margin: 0;
+		padding-top: 35px;
+		font-size: 28px;
+	}
+	
+	.profession {
+		margin: 5px;
+		font-size: 20px;
+	}
+	
+	.contacts {
+		text-align: center;
+		font-weight: 100;
+		font-size: 16px;
+		div { 
+			margin: auto auto auto 150px;
+			float: left;
+		}
+	}
+
+
+}
+
+
+.resume-body {
+	padding: 20pt;
+	width: 100%;
+	height: $body-height;
+
+	.section {
+		width: 555pt;
+		margin-bottom: 10pt;
+		padding: 10pt;
+
+		&:last-child {
+			border-bottom: none
+
+		}
+		
+		.section-name {
+			font-size: 26px;
+			margin-bottom: 15px;
+			color: var(--darker-color-theme);
+		}
+
+		.section-content {
+			margin-bottom: 30px;
+			font-family: "Roboto", sans-serif;
+
+			&.skill {
+				margin-left: 20px;
+			}
+			
+			.phone, .email { 
+				float: left;
+				margin: 20px 30px 10px 0;
+			}
+			
+			.title {
+				font-size: 22px;
+				margin-bottom: 3px;
+			}
+			.subtitle {
+				font-size: 20px;
+			}
+			.dates {
+				float: right;
+				margin-top: -20px;
+				font-size: 14px;
+			}
+			.description {
+				font-size: 18px;
+			}
+		}
+	}
+}
+	
+	
+	
+	
+

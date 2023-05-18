@@ -1,0 +1,31 @@
+{% extends "resume/base.html" %}
+
+{% block content %}
+{% load static %}
+
+	<div class="settings">
+		<h1>Account Settings</h1>
+		
+		{% comment %} <p style="width: 45%;">
+			<a href="{% url 'authentication:logout' %}" class="btn" style="float: none;">Reset Password</a>
+		</p> {% endcomment %}
+		<ul>
+			<li>
+				<a href="{% url 'authentication:delete_account' %}"  class="btn" style="float: none;">Delete Account</a>
+			</li>
+			<li>
+				<a href="{% url 'authentication:logout' %}" class="btn" style="float: none;">Log Out</a>
+			</li>
+		</ul>
+		<br>
+		<h1>Resume Settings</h2>
+		<h2>Change theme</h2>
+		<div class="themes">
+			<a class="theme green {% if theme == 'green' %}active{% endif %}" href="{% url 'resume:set_green' %}"></a>
+			<a class="theme blue {% if theme == 'blue' %}active{% endif %}" href="{% url 'resume:set_blue' %}"></a>
+			<a class="theme orange {% if theme == 'orange' %}active{% endif %}" href="{% url 'resume:set_orange' %}"></a>
+			<a class="theme pink {% if theme == 'pink' %}active{% endif %}" href="{% url 'resume:set_pink' %}"></a>
+		</div>
+	</div>
+
+{% endblock %}

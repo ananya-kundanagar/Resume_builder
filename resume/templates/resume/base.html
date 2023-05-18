@@ -1,0 +1,39 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en" data-theme="{{theme}}">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Resume-builder</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+	<link href="{% static 'resume/css/style.css' %}" rel="stylesheet">
+	<script src="{% static 'resume/js/pagination.js' %}"></script>
+</head>
+
+<body>
+	<main role="main">
+		<div class="container">
+			{% comment %} <h1 class="logo">Resumi</h1> {% endcomment %}
+			<a target="_blank" rel="noopener noreferrer" href="{% url 'resume:generate_resume' %}">
+				<div class="CTA">
+					<h3>CREATE RESUME</h3>
+				</div>
+			</a>
+			<nav class="menubar">
+				<a id="profile" class="{% if request.path == '/profile' %}active{% endif %}" href="{% url 'resume:profile' %}"><i class="fa fa-user"></i></a>
+				<a id="experience" class="{% if request.path == '/experience' %}active{% endif %}" href="{% url 'resume:experience' %}"><i class="fa fa-briefcase"></i></a>
+				<a id="education" class="{% if request.path == '/education' %}active{% endif %}" href="{% url 'resume:education' %}"><i class="fa fa-graduation-cap"></i></a>
+				<a id="skills" class="{% if request.path == '/skills' %}active{% endif %}" href="{% url 'resume:skills' %}"><i class="fa fa-tasks"></i></a>
+				<a id="settings" class="{% if request.path == '/settings' %}active{% endif %}" href="{% url 'resume:settings' %}"><i class="fa fa-cog"></i></a>
+			</nav>
+			<div class="content">
+				{% block content %}
+				{% endblock %}	  
+			</div>
+		  </div>		  
+	</main>
+</body>
+
+</html>

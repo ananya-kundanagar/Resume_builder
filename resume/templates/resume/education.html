@@ -1,0 +1,82 @@
+{% extends "resume/base.html" %}
+
+{% block content %}
+{% load static %}
+
+	<div class="education">
+		<h1>Educations</h1>
+		<div class="slideshow">
+			<div class="slide-wrapper">
+				{% for education in educations  %}
+				<div class="slide">
+		
+					<form action="{% url 'resume:update_education' %}" method="POST">
+						{% csrf_token %}
+						<button class="btn"> Save</button>
+						<a class="btn delete" href="education/delete_education/{{education.id}}">
+							<i class="fa fa-trash" aria-hidden="true"></i>
+						</a>
+						<h2>School Name</h2>
+						<p>
+							<input type="text" name="school" value="{{education.school}}">
+						</p>
+						<h2>Degree</h2>
+						<p>
+							<input type="text" name="degree" value="{{education.degree}}">
+						</p>
+						<h2>Start Date</h2>
+						<p>
+							<input type="text" name="start" value="{{education.startDate}}">
+						</p>
+						<h2>End Date</h2>
+						<p>
+							<input type="text" name="end" value="{{education.endDate}}">
+						</p>
+						<h2>Description</h2>
+						<p>
+							<textarea name="description"  maxlength="300">{{education.description}}</textarea>
+						</p>
+						<input name="id" value="{{education.id}}" hidden>
+					</form>
+				</div>
+				{% endfor  %}
+				<div class="slide">
+					<form action="{% url 'resume:create_education' %}" method="POST">
+						{% csrf_token %}
+						<button class="btn">Add to your educations</button>
+						<h2>School Name</h2>
+						<p>
+							<input type="text" name="school" value="">
+						</p>
+						<h2>Degree</h2>
+						<p>
+							<input type="text" name="degree" value="">
+						</p>
+						<h2>Start Date</h2>
+						<p>
+							<input type="date" name="start" value="">
+						</p>
+						<h2>End Date</h2>
+						<p>
+							<input type="date" name="end" value="">
+						</p>
+						<h2>Description</h2>
+						<p>
+							<textarea name="description"  maxlength="300"></textarea>
+						</p>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="pagination-btns">
+		{% for education in educations  %}		
+			<button id="{{education.id}}" name="page"
+					class="btn {% if educations.0 == education %} active {% endif %}"
+					onClick="slide(id)">
+			</button>
+		{% endfor  %}
+		</div>
+		<button class="btn" onClick="newForm()">+ New Education</button>
+	</div>
+
+{% endblock %}
